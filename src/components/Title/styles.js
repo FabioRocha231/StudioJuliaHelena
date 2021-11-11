@@ -13,5 +13,7 @@ export const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     color: '#F2F0F2',
+    borderColor: '#BE809F',
+    borderWidth: 2,
   },
 });

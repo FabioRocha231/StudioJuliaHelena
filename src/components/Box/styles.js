@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
   box: {
     backgroundColor: '#F2F0F2',
     marginTop: 60,
-    height: 300,
-    marginBottom: 30,
-    marginHorizontal: 20,
+    height: 320,
+    marginBottom: 90,
+    marginHorizontal: 10,
     borderRadius: 10,
     elevation: 30,
   },

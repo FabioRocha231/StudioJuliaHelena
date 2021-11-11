@@ -5,7 +5,7 @@ import { Box } from '../Box';
 
 import { styles } from './styles';
 
-function Collabs({ name, image }) {
+function BoxWrapper({ name, image }) {
   return (
     <View style={styles.container}>
       <Box name={name} image={image} />
@@ -13,4 +13,4 @@ function Collabs({ name, image }) {
   );
 }
 
-export { Collabs };
+export { BoxWrapper };

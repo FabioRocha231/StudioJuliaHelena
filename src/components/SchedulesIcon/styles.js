@@ -4,13 +4,17 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  imageContain: {},
-  image: {
+  icon: {
+    width: 50,
+    height: 50,
+
     position: 'absolute',
-    left: 153,
-    top: -40,
+    top: 5,
+    left: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    backgroundColor: '#BE809F',
     borderRadius: 50,
-    borderWidth: 3,
-    borderColor: '#D64E85',
   },
 });
