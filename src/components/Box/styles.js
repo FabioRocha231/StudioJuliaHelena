@@ -8,9 +8,10 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F2F0F2',
     marginTop: 60,
     height: 320,
-    marginBottom: 90,
+    marginBottom: 120,
     marginHorizontal: 10,
     borderRadius: 10,
     elevation: 30,
+    borderWidth: 0.5,
   },
 });

@@ -1,13 +1,23 @@
 import React from 'react';
-
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity, Linking } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { styles } from './styles';
 
-function Title({ name }) {
+function Title({ name, onPress }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{name.toUpperCase()}</Text>
+      <TouchableOpacity
+        style={styles.wrapper}
+        onPress={() => Linking.openURL(`${onPress}`)}
+      >
+        <View style={styles.instagramIcon}>
+          <Icon name="instagram" size={30} color="#ffffff" />
+        </View>
+        <View>
+          <Text style={styles.text}>{name.toUpperCase()}</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
