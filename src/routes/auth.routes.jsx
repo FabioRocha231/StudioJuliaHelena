@@ -1,16 +1,19 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { HomeScreen } from '../pages/HomeScreen';
 import { SchedulesScreen } from '../pages/SchedulesScreen';
+import { LoginScreen } from '../pages/LoginScreen';
 
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
+const Stack = createStackNavigator();
 
-function AuthRoutes() {
+function Tabs() {
   return (
     <Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="LoginScreen"
       shifting={true}
       activeColor="#F2526E"
       barStyle={{
@@ -22,6 +25,7 @@ function AuthRoutes() {
         elevation: 2,
         borderRadius: 15,
         height: 90,
+        marginTop: 30,
       }}
     >
       <Screen
@@ -31,9 +35,7 @@ function AuthRoutes() {
           tabBarLabel: 'Home',
 
           tabBarColor: 'white',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-home" color="#F2526E" size={26} />
-          ),
+          tabBarIcon: () => <Icon name="ios-home" color="#F2526E" size={26} />,
         }}
       />
       <Screen
@@ -43,7 +45,7 @@ function AuthRoutes() {
           tabBarLabel: 'Horarios',
 
           tabBarColor: 'white',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <Icon name="calendar-sharp" color="#F2526E" size={26} />
           ),
         }}
@@ -51,4 +53,13 @@ function AuthRoutes() {
     </Navigator>
   );
 }
+
+const AuthRoutes = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="Home" component={Tabs} />
+    </Stack.Navigator>
+  );
+};
 export { AuthRoutes };

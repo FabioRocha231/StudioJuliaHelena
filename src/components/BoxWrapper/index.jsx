@@ -5,10 +5,10 @@ import { Box } from '../Box';
 
 import { styles } from './styles';
 
-function BoxWrapper({ name, image, onPress }) {
+function BoxWrapper({ children }) {
   return (
     <View style={styles.container}>
-      <Box name={name} image={image} onPress={onPress} />
+      <Box>{children}</Box>
     </View>
   );
 }
