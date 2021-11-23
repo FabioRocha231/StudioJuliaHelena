@@ -6,14 +6,15 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { HomeScreen } from '../pages/HomeScreen';
 import { SchedulesScreen } from '../pages/SchedulesScreen';
 import { LoginScreen } from '../pages/LoginScreen';
+import { UserScreen } from '../pages/UserScreen';
 
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function Tabs() {
+function Tabs({ user }) {
   return (
     <Navigator
-      initialRouteName="LoginScreen"
+      initialRouteName="HomeScreen"
       shifting={true}
       activeColor="#F2526E"
       barStyle={{
@@ -58,6 +59,7 @@ const AuthRoutes = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="UserScreen" component={UserScreen} />
       <Stack.Screen name="Home" component={Tabs} />
     </Stack.Navigator>
   );

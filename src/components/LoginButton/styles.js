@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     width: 250,
     justifyContent: 'center',
     alignItems: 'center',
+    elevation: 5,
   },
   iconWrapper: {
     flexDirection: 'row',

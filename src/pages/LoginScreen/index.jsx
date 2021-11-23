@@ -1,11 +1,13 @@
-import React, { Component, useState } from 'react';
-import { Text, View, Button, Image } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
 import * as Facebook from 'expo-facebook';
-import { FacebookID, AppName } from '../../../configs';
+import { FacebookID } from '../../../configs';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
+
 import { styles } from './styles';
 import { LoginButton } from '../../components/LoginButton';
+
 /*import InstagramLogin from 'react-native-instagram-login';
 import { LoginButton } from '../../components/LoginButton';
 import { RedirectButton } from '../../components/RedirectButton';
@@ -14,16 +16,11 @@ import { RedirectButton } from '../../components/RedirectButton';
 const LoginScreen = () => {
   const [user, setUser] = useState(null);
 
-  const { appid, appName } = {
-    appId: FacebookID,
-    appName: AppName,
-  };
-
   const navigation = useNavigation();
 
   const signUpFacebook = async () => {
     try {
-      await Facebook.initializeAsync({ appid, appName });
+      await Facebook.initializeAsync(FacebookID);
       const { type, token } = await Facebook.logInWithReadPermissionsAsync({
         permissions: ['public_profile', 'email'],
       });
@@ -35,7 +32,7 @@ const LoginScreen = () => {
         // console.log((await response.json()).name);
         const data = await response.json();
         setUser(data);
-        navigation.navigate('Home', { user: user });
+        navigation.navigate('UserScreen', { user: data });
       } else {
         // type === 'cancel'
       }
