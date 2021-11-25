@@ -11,7 +11,7 @@ import { UserScreen } from '../pages/UserScreen';
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function Tabs({ user }) {
+function Tabs() {
   return (
     <Navigator
       initialRouteName="HomeScreen"

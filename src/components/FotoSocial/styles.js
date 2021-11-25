@@ -1,18 +1,25 @@
 import { StyleSheet } from 'react-native';
+
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    elevation: 5,
-    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+
+    width: 55,
+    height: 55,
+
+    marginTop: 3,
+    marginLeft: 10,
+
+    borderRadius: 55 / 2,
+    backgroundColor: '#D97398',
   },
   image: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    resizeMode: 'contain',
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    resizeMode: 'stretch',
   },
 });
 

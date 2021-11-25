@@ -8,9 +8,8 @@ import { styles } from './styles';
 const SocialBox = ({ route }) => {
   return (
     <View style={styles.imageWrapper}>
-      <FotoSocial source={`${route.params.user.picture.data.url}`} />
-      <Text style={styles.text}>Seja Bem-Vinda(o)</Text>
-      <Text style={styles.text}>{route.params.user.name}</Text>
+      <FotoSocial source={`${route.params.user.userPhoto}`} />
+      <Text style={styles.text}>{route.params.user.username}</Text>
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { styles } from './styles';
 import { ButtonGoHome } from '../../components/ButtonGoHome';

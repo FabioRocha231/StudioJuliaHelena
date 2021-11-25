@@ -4,17 +4,17 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';
 
-const LoginButton = ({ onPress }) => {
+const LoginButtonFacebook = ({ onPress }) => {
   return (
     <TouchableOpacity style={styles.btn} onPress={onPress}>
       <View style={styles.iconWrapper}>
         <Icon name="logo-facebook" size={24} color="#ffffff" />
         <Text style={{ color: 'white', textAlign: 'center', marginLeft: 40 }}>
-          Login now
+          Logar Com Facebook
         </Text>
       </View>
     </TouchableOpacity>
   );
 };
 
-export { LoginButton };
+export { LoginButtonFacebook };

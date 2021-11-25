@@ -2,18 +2,17 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { styles } from './styles';
-import { GobackIcon } from '../GobackIcon';
 
-const HeaderSchedules = () => {
+const HeaderComponent = ({ title }) => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
         <View>
-          <Text style={styles.titleText}>Horarios</Text>
+          <Text style={styles.titleText}>{title}</Text>
         </View>
       </View>
     </View>
   );
 };
 
-export { HeaderSchedules };
+export { HeaderComponent };
