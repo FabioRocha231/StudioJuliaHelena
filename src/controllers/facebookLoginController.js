@@ -1,4 +1,9 @@
 import firebase from 'firebase';
+import { firebaseConfig } from '../configs/firebaseConfig';
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 function getCredential(token) {
   return firebase.auth.FacebookAuthProvider.credential(token);

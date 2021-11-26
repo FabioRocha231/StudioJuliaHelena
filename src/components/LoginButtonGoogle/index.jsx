@@ -6,7 +6,7 @@ import { styles } from './styles';
 
 const LoginButtonGoogle = ({ onPress }) => {
   return (
-    <TouchableOpacity style={styles.btn} onPress={() => {}}>
+    <TouchableOpacity style={styles.btn} onPress={onPress}>
       <View style={styles.iconWrapper}>
         <Icon name="logo-google" size={24} color="#ffffff" />
         <Text style={{ color: 'white', textAlign: 'center', marginLeft: 40 }}>
