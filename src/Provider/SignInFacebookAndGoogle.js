@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import * as Facebook from 'expo-facebook';
 import { FacebookID } from '../../configs';
 import { useNavigation } from '@react-navigation/native';
 
 import { LoginButtonFacebook } from '../components/LoginButtonFacebook';
 import { signInWithFacebookFunction } from '../controllers/facebookLoginController';
-import { LoginAndAuthenticateInFirebaseWithGoogle } from './SignInGoogle';
+import { LoginAndAuthenticateInFirebaseWithGoogle } from './SignInGoogleAlgoritm';
 
-const LoginWithFacebook = () => {
+const LoginWithFacebookAndGoogle = () => {
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const signInFacebook = async () => {
     try {
+      setLoading(true);
       await Facebook.initializeAsync(FacebookID);
       const { token } = await Facebook.logInWithReadPermissionsAsync({
         permissions: ['public_profile', 'email'],
@@ -27,13 +29,24 @@ const LoginWithFacebook = () => {
     } catch ({ message }) {
       alert(`Facebook Login Error: ${message}`);
     }
+    setLoading(false);
   };
   return (
-    <View>
-      <LoginButtonFacebook onPress={signInFacebook} />
-      <LoginAndAuthenticateInFirebaseWithGoogle />
-    </View>
+    <>
+      {loading ? (
+        <ActivityIndicator
+          style={{ justifyContent: 'center', alignItems: 'center' }}
+          size="large"
+          color="#0000ff"
+        />
+      ) : (
+        <View>
+          <LoginButtonFacebook onPress={signInFacebook} />
+          <LoginAndAuthenticateInFirebaseWithGoogle setLoading={setLoading} />
+        </View>
+      )}
+    </>
   );
 };
 
-export { LoginWithFacebook };
+export { LoginWithFacebookAndGoogle };

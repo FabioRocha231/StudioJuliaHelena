@@ -16,7 +16,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-const LoginAndAuthenticateInFirebaseWithGoogle = () => {
+const LoginAndAuthenticateInFirebaseWithGoogle = ({ setLoading }) => {
   const navigation = useNavigation();
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
     clientId: googleIdClient,
@@ -24,6 +24,7 @@ const LoginAndAuthenticateInFirebaseWithGoogle = () => {
 
   useEffect(() => {
     if (response?.type === 'success') {
+      setLoading(true);
       const { id_token } = response.params;
       const provider = getTheAcessTokenFromGoogleFirebase();
       const credential = provider.credential(id_token);
@@ -39,6 +40,7 @@ const LoginAndAuthenticateInFirebaseWithGoogle = () => {
           navigation.navigate('UserScreen', {
             user: userSettings,
           });
+          setLoading(false);
         })
         .catch((error) => {
           console.error(error);

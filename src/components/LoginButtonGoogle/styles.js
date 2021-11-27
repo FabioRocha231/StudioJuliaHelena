@@ -14,4 +14,12 @@ export const styles = StyleSheet.create({
   iconWrapper: {
     flexDirection: 'row',
   },
+  textWrapper: {
+    marginLeft: 30,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+  },
 });

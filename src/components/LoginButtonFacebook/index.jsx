@@ -9,9 +9,9 @@ const LoginButtonFacebook = ({ onPress }) => {
     <TouchableOpacity style={styles.btn} onPress={onPress}>
       <View style={styles.iconWrapper}>
         <Icon name="logo-facebook" size={24} color="#ffffff" />
-        <Text style={{ color: 'white', textAlign: 'center', marginLeft: 40 }}>
-          Logar Com Facebook
-        </Text>
+        <View style={styles.textWrapper}>
+          <Text style={styles.textButton}>Entrar Com Facebook</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );

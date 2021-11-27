@@ -2,9 +2,9 @@ import { StyleSheet, StatusBar } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: StatusBar.currentHeight,
+    //marginTop: StatusBar.currentHeight,
     flex: 1,
-    backgroundColor: '#A65362',
+    backgroundColor: '#F17A97',
   },
 });
 

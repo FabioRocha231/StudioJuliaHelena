@@ -9,9 +9,9 @@ const LoginButtonGoogle = ({ onPress }) => {
     <TouchableOpacity style={styles.btn} onPress={onPress}>
       <View style={styles.iconWrapper}>
         <Icon name="logo-google" size={24} color="#ffffff" />
-        <Text style={{ color: 'white', textAlign: 'center', marginLeft: 40 }}>
-          Logar Com Google
-        </Text>
+        <View style={styles.textWrapper}>
+          <Text style={styles.buttonText}>Entrar Com Google</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );

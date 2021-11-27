@@ -13,4 +13,11 @@ export const styles = StyleSheet.create({
   iconWrapper: {
     flexDirection: 'row',
   },
+  textWrapper: {
+    marginLeft: 30,
+  },
+  textButton: {
+    color: 'white',
+    textAlign: 'center',
+  },
 });

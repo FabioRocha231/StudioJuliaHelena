@@ -4,15 +4,15 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   wrapper: {
+    marginTop: 70,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     borderRadius: 15,
-    width: 270,
-    height: 140,
+    width: 340,
+    height: 170,
   },
   textWrapper: {
     width: 280,
