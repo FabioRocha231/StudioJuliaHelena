@@ -34,7 +34,6 @@ function Tabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-
           tabBarColor: 'white',
           tabBarIcon: () => <Icon name="ios-home" color="#F2526E" size={26} />,
         }}
@@ -44,7 +43,6 @@ function Tabs() {
         component={SchedulesScreen}
         options={{
           tabBarLabel: 'Horarios',
-
           tabBarColor: 'white',
           tabBarIcon: () => (
             <Icon name="calendar-sharp" color="#F2526E" size={26} />
@@ -60,7 +58,7 @@ const AuthRoutes = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="UserScreen" component={UserScreen} />
-      <Stack.Screen name="Home" component={Tabs} />
+      <Stack.Screen name="HomeScreen" component={Tabs} />
     </Stack.Navigator>
   );
 };

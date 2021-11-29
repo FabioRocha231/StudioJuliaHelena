@@ -48,11 +48,13 @@ const SignInWithGoogle = () => {
   return (
     <>
       {loading ? (
-        <ActivityIndicator
-          style={{ justifyContent: 'center', alignItems: 'center' }}
-          size="large"
-          color="#0000ff"
-        />
+        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <ActivityIndicator
+            style={{ justifyContent: 'center', alignItems: 'center' }}
+            size="large"
+            color="#0000ff"
+          />
+        </View>
       ) : (
         <View>
           <LoginButtonGoogle onPress={() => promptAsync()} />

@@ -16,7 +16,7 @@ const UserScreen = ({ route }) => {
       <ClientSchedules />
       <ButtonGoHome
         title="Pagina Inicial"
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('HomeScreen')}
       />
     </View>
   );
