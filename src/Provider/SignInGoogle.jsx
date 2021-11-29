@@ -1,22 +1,19 @@
-import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import firebase from 'firebase';
-
-import { googleIdClient } from '../../configs';
+import { ActivityIndicator, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-//import { ResponseType } from 'expo-auth-session';
 import * as Google from 'expo-auth-session/providers/google';
 
+import { googleIdClient } from '../../configs';
 import { firebaseConfig } from '../configs/firebaseConfig';
 import { LoginButtonGoogle } from '../components/LoginButtonGoogle';
-import { getTheAcessTokenFromGoogleFirebase } from '../controllers/googleLoginController';
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-const LoginAndAuthenticateInFirebaseWithGoogle = ({ setLoading }) => {
+const SignInWithGoogle = () => {
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
     clientId: googleIdClient,
@@ -26,7 +23,7 @@ const LoginAndAuthenticateInFirebaseWithGoogle = ({ setLoading }) => {
     if (response?.type === 'success') {
       setLoading(true);
       const { id_token } = response.params;
-      const provider = getTheAcessTokenFromGoogleFirebase();
+      const provider = new firebase.auth.GoogleAuthProvider();
       const credential = provider.credential(id_token);
       firebase
         .auth()
@@ -49,10 +46,20 @@ const LoginAndAuthenticateInFirebaseWithGoogle = ({ setLoading }) => {
   }, [response]);
 
   return (
-    <View>
-      <LoginButtonGoogle onPress={() => promptAsync()} />
-    </View>
+    <>
+      {loading ? (
+        <ActivityIndicator
+          style={{ justifyContent: 'center', alignItems: 'center' }}
+          size="large"
+          color="#0000ff"
+        />
+      ) : (
+        <View>
+          <LoginButtonGoogle onPress={() => promptAsync()} />
+        </View>
+      )}
+    </>
   );
 };
 
-export { LoginAndAuthenticateInFirebaseWithGoogle };
+export { SignInWithGoogle };
