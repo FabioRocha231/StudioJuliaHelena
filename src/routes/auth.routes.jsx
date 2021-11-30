@@ -11,7 +11,7 @@ import { UserScreen } from '../pages/UserScreen';
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function Tabs() {
+function Tabs({ route }) {
   return (
     <Navigator
       initialRouteName="HomeScreen"
@@ -48,6 +48,7 @@ function Tabs() {
             <Icon name="calendar-sharp" color="#F2526E" size={26} />
           ),
         }}
+        initialParams={route.params}
       />
     </Navigator>
   );
@@ -58,7 +59,7 @@ const AuthRoutes = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="UserScreen" component={UserScreen} />
-      <Stack.Screen name="HomeScreen" component={Tabs} />
+      <Stack.Screen name="AuthScreen" component={Tabs} />
     </Stack.Navigator>
   );
 };

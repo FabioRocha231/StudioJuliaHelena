@@ -26,12 +26,14 @@ const SignInWithFacebook = () => {
     try {
       firebase
         .auth()
-        .signInWithCredential(facebookCredential || credential)
+        .signInWithCredential(facebookCredential)
         .then((userid) => {
           const { user } = userid;
           const userSettings = {
+            userUid: user.uid,
             username: user.displayName,
             userPhoto: user.photoURL,
+            userEmail: user.email,
           };
           navigation.navigate('UserScreen', {
             user: userSettings,

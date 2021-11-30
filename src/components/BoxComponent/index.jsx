@@ -7,7 +7,7 @@ import { Title } from '../Title';
 import { Schedules } from '../Schedules';
 
 import { styles } from './styles';
-const BoxComponent = () => {
+const BoxComponent = ({ userParams }) => {
   return (
     <View styrle={styles.container}>
       <ScrollView style={styles.scrollStyle}>
@@ -18,7 +18,7 @@ const BoxComponent = () => {
             name="Julia Rocha"
             onPress={'https://www.instagram.com/studiojuliahelena/'}
           />
-          <Schedules />
+          <Schedules userParams={userParams} />
         </BoxWrapper>
 
         <BoxWrapper>
@@ -27,7 +27,7 @@ const BoxComponent = () => {
             name="thati.nails_braids"
             onPress={'https://www.instagram.com/thati.nails_braids/'}
           />
-          <Schedules />
+          <Schedules userParams={userParams} />
         </BoxWrapper>
 
         <BoxWrapper>
@@ -36,7 +36,7 @@ const BoxComponent = () => {
             name="Kelly"
             onPress={'https://www.instagram.com/thati.nails_braids/'}
           />
-          <Schedules />
+          <Schedules userParams={userParams} />
         </BoxWrapper>
         <View style={{ marginTop: 120 }} />
       </ScrollView>

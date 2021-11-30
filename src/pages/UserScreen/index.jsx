@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-
 import { View } from 'react-native';
-
 import { styles } from './styles';
 import { ButtonGoHome } from '../../components/ButtonGoHome';
 import { SocialBox } from '../../components/SocialBox';
@@ -16,7 +14,7 @@ const UserScreen = ({ route }) => {
       <ClientSchedules />
       <ButtonGoHome
         title="Pagina Inicial"
-        onPress={() => navigation.navigate('HomeScreen')}
+        onPress={() => navigation.navigate('AuthScreen', { user: route })}
       />
     </View>
   );

@@ -1,9 +1,12 @@
 import React from 'react';
-
 import { View, Text, TouchableOpacity } from 'react-native';
-import { FotoCollab } from '../FotoCollab';
-
 import { styles } from './styles';
+import firebase from 'firebase';
+import { firebaseConfig } from '../../configs/firebaseConfig';
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 const data = [
   {
@@ -48,12 +51,39 @@ const data = [
   },
 ];
 
-const Schedules = () => {
+const Schedules = ({ userParams }) => {
+  const user = {
+    userUid: userParams.user.userUid,
+    username: userParams.user.username,
+    userEmail: userParams.user.userEmail,
+    userPhoto: userParams.user.userPhoto,
+  };
+  function writeUserData(userId, name, email, imageUrl) {
+    firebase
+      .database()
+      .ref('users/' + userId)
+      .set({
+        username: name,
+        email: email,
+        profile_picture: imageUrl,
+      });
+  }
   return (
     <View>
       <View style={styles.wrapper}>
         {data.map(({ id, schedule }) => (
-          <TouchableOpacity style={styles.schedulers} key={id}>
+          <TouchableOpacity
+            style={styles.schedulers}
+            key={id}
+            onPress={() =>
+              writeUserData(
+                user.userUid,
+                user.username,
+                user.userEmail,
+                user.userPhoto,
+              )
+            }
+          >
             <Text>{schedule}</Text>
           </TouchableOpacity>
         ))}

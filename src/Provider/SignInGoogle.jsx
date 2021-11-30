@@ -31,8 +31,10 @@ const SignInWithGoogle = () => {
         .then((userid) => {
           const { user } = userid;
           const userSettings = {
+            userUid: user.uid,
             username: user.displayName,
             userPhoto: user.photoURL,
+            userEmail: user.email,
           };
           navigation.navigate('UserScreen', {
             user: userSettings,
