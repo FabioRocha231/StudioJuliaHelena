@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
     },
     modalView: {
         justifyContent: 'center',
-        width: 300,
-        height: 250,
+        width: 350,
+        height: 350,
         margin: 20,
-        backgroundColor: "white",
+        backgroundColor: "#C1F0F4",
         borderRadius: 20,
         padding: 35,
         alignItems: "center",
@@ -60,6 +60,10 @@ const styles = StyleSheet.create({
     },
     unvaliable: {
         backgroundColor: 'rgba(241,148,255, 0.2)'
+    },
+    divisor: {
+        borderBottomWidth: 1, 
+        borderColor: '#FFFFFF'
     }
 })
 

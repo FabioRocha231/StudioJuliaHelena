@@ -40,16 +40,6 @@ function HomeScreen() {
           
           <NailsFlatList />
         </Box>
-
-        <Box style={styles.boxKelly}>
-          <FotoCollab source={require('../../assets/thati.jpg')} />
-          <Title
-            name="Kelly"
-            onPress={'https://www.instagram.com/thati.nails_braids/'}
-            borderColor="#FFFFFF"
-          />
-          <NailsFlatList />
-        </Box>
         <View style={{ marginTop: 120 }} />
       </ScrollView>
     </View>

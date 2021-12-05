@@ -4,7 +4,7 @@ import { styles } from './styles'
 import { month } from '../../../month';
 import { ModalServicesAndPrices } from '../ModalServicesAndPrices';
 
-function ModalWindow() {
+function ModalWindow({professional}) {
     const [modalVisible, setModalVisible] = useState(false);
     return(
         <View style={styles.centeredView}>
@@ -18,12 +18,12 @@ function ModalWindow() {
             }}>
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <ModalServicesAndPrices />
+                        <ModalServicesAndPrices professional={professional}/>
                         <TouchableOpacity
                             style={styles.buttonClose}
                             onPress={() => setModalVisible(!modalVisible)}
                         >
-                            <Text style={styles.textStyle}>Hide Modal</Text>
+                            <Text style={styles.textStyle}>Fechar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -42,7 +42,7 @@ function ModalWindow() {
                             disabled={item.isAvailable ? false : true}
                         >
                             <Text style={styles.textStyle}>{item.dayOfWeek}</Text>
-                            <View style={{borderBottomWidth: 1, borderColor: '#FFFFFF'}}/>
+                            <View style={styles.divisor}/>
                             <Text style={styles.dayOfMonth}>{item.day}</Text>
 
                         </TouchableOpacity>

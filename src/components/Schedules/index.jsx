@@ -9,51 +9,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-const data = [
-  {
-    id: '1',
-    schedule: '10:00',
-  },
-  {
-    id: '2',
-    schedule: '11:00',
-  },
-  {
-    id: '3',
-    schedule: '12:00',
-  },
-  {
-    id: '4',
-    schedule: '13:00',
-  },
-  {
-    id: '5',
-    schedule: '14:00',
-  },
-  {
-    id: '6',
-    schedule: '15:00',
-  },
-  {
-    id: '7',
-    schedule: '16:00',
-  },
-  {
-    id: '8',
-    schedule: '17:00',
-  },
-  {
-    id: '9',
-    schedule: '18:00',
-  },
-  {
-    id: '10',
-    schedule: '19:00',
-  },
-];
-
-const Schedules = ({ userParams }) => {
-  
+const Schedules = ({ userParams, professional }) => {
   const user = {
     userUid: userParams.userUid,
     username: userParams.username,
@@ -74,7 +30,7 @@ const Schedules = ({ userParams }) => {
     <View style={{marginTop: 90}}>
       <View style={styles.wrapper}>
       
-        <ModalWindow />
+        <ModalWindow professional={professional}/>
         
         {/*data.map(({ id, schedule }) => (
           <TouchableOpacity
