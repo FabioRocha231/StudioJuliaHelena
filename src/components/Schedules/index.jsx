@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Modal } from 'react-native';
 import { styles } from './styles';
 import firebase from 'firebase';
 import { firebaseConfig } from '../../configs/firebaseConfig';
-import { ModalWindow } from '../ModalDaysOfMonth';
+import { ModalDaysOfMonth } from '../ModalDaysOfMonth';
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -16,7 +16,7 @@ const Schedules = ({ userParams, professional }) => {
     userEmail: userParams.userEmail,
     userPhoto: userParams.userPhoto,
   };
-  function writeUserData(userId, name, email, imageUrl) {
+  function writeUserData(userId, name, email, imageUrl, service, day, hour, numberOfWeek) {
     firebase
       .database()
       .ref('users/' + userId)
@@ -24,13 +24,17 @@ const Schedules = ({ userParams, professional }) => {
         username: name,
         email: email,
         profile_picture: imageUrl,
+        service: service,
+        dayOfWeek: numberOfWeek,
+        day: day,
+        hour: hour
       });
   }
   return (
     <View style={{marginTop: 90}}>
       <View style={styles.wrapper}>
       
-        <ModalWindow professional={professional}/>
+        <ModalDaysOfMonth professional={professional} writeUserData={writeUserData} user={user}/>
         
         {/*data.map(({ id, schedule }) => (
           <TouchableOpacity

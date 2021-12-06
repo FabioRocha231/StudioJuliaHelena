@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 22
+        marginTop: 22,
     },
     modalView: {
         justifyContent: 'center',

@@ -7,11 +7,8 @@ import { styles } from './styles';
 const WelcomeComponent = () => {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.icon}
-        source={require('../../assets/loginIcon.png')}
-      />
-      <Text style={styles.text}>Seja Bem Vindo!</Text>
+      <Text style={styles.text}>Studio Julia Helena</Text>
+      <Text style={styles.text}>Seja Bem Vinda(o)!</Text>
     </View>
   );
 };

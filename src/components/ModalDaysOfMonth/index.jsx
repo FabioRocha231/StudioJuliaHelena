@@ -4,8 +4,10 @@ import { styles } from './styles'
 import { month } from '../../../month';
 import { ModalServicesAndPrices } from '../ModalServicesAndPrices';
 
-function ModalWindow({professional}) {
+function ModalDaysOfMonth({professional, writeUserData, user}) {
     const [modalVisible, setModalVisible] = useState(false);
+    const [dayOfWeek, setDayOfWeek] = useState("");
+    const [day , setDay] = useState("")
     return(
         <View style={styles.centeredView}>
             <Modal
@@ -18,7 +20,14 @@ function ModalWindow({professional}) {
             }}>
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <ModalServicesAndPrices professional={professional}/>
+                        <ModalServicesAndPrices 
+                            professional={professional} 
+                            writeUserData={writeUserData} 
+                            user={user}
+                            dayOfWeek={dayOfWeek}
+                            numberOfWeek={day}
+                            setModalDays={setModalVisible}
+                        />
                         <TouchableOpacity
                             style={styles.buttonClose}
                             onPress={() => setModalVisible(!modalVisible)}
@@ -37,8 +46,12 @@ function ModalWindow({professional}) {
                     renderItem={({item}) => (
                         <TouchableOpacity 
                             style={[styles.button, item.isAvailable ? null : styles.unvaliable]}
-                            onPress={() => setModalVisible(true)}
-                            activeOpacity={0.9}
+                            onPress={() => {
+                                setDayOfWeek(item.dayOfWeek)
+                                setDay(item.day)
+                                setModalVisible(true)
+                            }}
+                            activeOpacity={0.5}
                             disabled={item.isAvailable ? false : true}
                         >
                             <Text style={styles.textStyle}>{item.dayOfWeek}</Text>
@@ -53,4 +66,4 @@ function ModalWindow({professional}) {
     )
 }
 
-export { ModalWindow }
+export { ModalDaysOfMonth }

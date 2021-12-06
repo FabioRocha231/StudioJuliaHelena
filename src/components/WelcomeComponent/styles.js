@@ -2,19 +2,18 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-    width: '100%',
-    height: 300,
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    width: 300,
+    height: 100,
     marginBottom: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    borderRadius: 20,
   },
   text: {
-    marginTop: 20,
-    justifyContent: 'flex-start',
     textAlign: 'center',
+    color: "#FFFFFF",
+    textAlignVertical: 'center',
     fontSize: 18,
   },
   icon: {

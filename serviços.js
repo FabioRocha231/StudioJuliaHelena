@@ -84,4 +84,47 @@ const thati = [
   }
 ]
 
-export { juliaRocha, thati }
+const data = [
+  {
+      id: '1',
+      schedule: '10:00',
+  },
+  {
+      id: '2',
+      schedule: '11:00',
+  },
+  {
+      id: '3',
+      schedule: '12:00',
+  },
+  {
+      id: '4',
+      schedule: '13:00',
+  },
+  {
+      id: '5',
+      schedule: '14:00',
+  },
+  {
+      id: '6',
+      schedule: '15:00',
+  },
+  {
+      id: '7',
+      schedule: '16:00',
+  },
+  {
+      id: '8',
+      schedule: '17:00',
+  },
+  {
+      id: '9',
+      schedule: '18:00',
+  },
+  {
+      id: '10',
+      schedule: '19:00',
+  },
+];
+
+export { juliaRocha, thati, data }

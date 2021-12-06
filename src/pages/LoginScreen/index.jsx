@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -10,13 +10,13 @@ import { SignInWithGoogle } from '../../Provider/SignInGoogle';
 
 const LoginScreen = () => {
   return (
-    <LinearGradient style={styles.container} colors={['#F2526E', '#F17A97']}>
+    <ImageBackground style={styles.container} source={require('../../assets/hair.jpg')} >
       <WelcomeComponent />
       <View style={styles.wrapper}>
         <SignInWithFacebook />
         <SignInWithGoogle />
       </View>
-    </LinearGradient>
+    </ImageBackground>
   );
 };
 

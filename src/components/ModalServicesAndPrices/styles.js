@@ -95,10 +95,9 @@ const styles = StyleSheet.create({
         margin: 5,
         alignItems: 'center',
         justifyContent: 'center',
-      },
-      wrapper: {
-        borderWidth: 1,
-        height: 240,
+    },
+    wrapper: {
+        height: 200,
         borderRadius: 20,
         marginBottom: 10,
         backgroundColor: '#C1F0F4',
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignContent: 'center',
         justifyContent: 'center',
-      }
+    }
 })
 
 export { styles }
