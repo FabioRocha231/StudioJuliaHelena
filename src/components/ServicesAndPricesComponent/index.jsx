@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { data } from '../../../serviços';
-import { styles } from './styles'
+import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 function ServicesAndPricesComponent({
   setModalVisible, 
@@ -13,8 +14,9 @@ function ServicesAndPricesComponent({
   service,
   setHour,
   hour,
-  setModalDays
+  setModalDays,
 }) {
+  const navigation = useNavigation();
   const [ active, setActive ] = useState(false)
   return(
     <View style={styles.centeredView}>
@@ -60,6 +62,7 @@ function ServicesAndPricesComponent({
                                 hour, 
                                 dayOfWeek
                             )
+                            navigation.navigate('UserScreen')
                             setModalVisible(!modalVisible)
                             setModalDays(!modalVisible)
                             Alert.alert(
